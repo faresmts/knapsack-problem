@@ -1,0 +1,3 @@
+/home/fares/projects/knapsack-problem/build/CMakeFiles/knapsack_problem.dir
+/home/fares/projects/knapsack-problem/build/CMakeFiles/edit_cache.dir
+/home/fares/projects/knapsack-problem/build/CMakeFiles/rebuild_cache.dir
