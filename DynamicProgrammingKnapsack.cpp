@@ -2,6 +2,18 @@
 #include <vector>
 #include <algorithm>
 
+/**
+ * @brief Resolve o Problema da Mochila usando uma abordagem de programação dinâmica.
+ * 
+ * Esta função constrói uma tabela DP (dp) para armazenar o valor máximo que pode ser
+ * obtido para cada capacidade e subconjunto de itens. A solução final é o valor
+ * na célula dp[n][capacity].
+ * 
+ * @param capacity A capacidade máxima da mochila.
+ * @param items O vetor de itens disponíveis, cada um com peso e valor.
+ * @return std::pair<int, size_t> Um par contendo o valor total máximo da solução e
+ * o uso de memória estimado pela tabela DP.
+ */
 std::pair<int, size_t> DynamicProgrammingKnapsack::solve(int capacity, const std::vector<Item>& items) {
     int n = items.size();
     std::vector<std::vector<int>> dp(n + 1, std::vector<int>(capacity + 1, 0));

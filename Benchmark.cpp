@@ -6,6 +6,14 @@
 #include <chrono>
 #include <random>
 
+/**
+ * @brief Gera um vetor de itens com pesos e valores aleatórios.
+ * 
+ * @param num_items O número de itens a serem gerados.
+ * @param max_weight O peso máximo que um item pode ter.
+ * @param max_value O valor máximo que um item pode ter.
+ * @return std::vector<Item> Um vetor de itens gerados aleatoriamente.
+ */
 std::vector<Item> Benchmark::generate_items(int num_items, int max_weight, int max_value) {
     std::vector<Item> items(num_items);
     std::random_device rd;
@@ -19,6 +27,20 @@ std::vector<Item> Benchmark::generate_items(int num_items, int max_weight, int m
     return items;
 }
 
+/**
+ * @brief Executa o benchmark comparando os solucionadores de programação dinâmica e guloso.
+ * 
+ * Para cada execução, um novo conjunto de itens é gerado e ambos os algoritmos são executados.
+ * Os resultados, incluindo tempo de execução, uso de memória e valor da solução, são salvos
+ * em um arquivo CSV.
+ * 
+ * @param num_items O número de itens a serem usados em cada execução.
+ * @param capacity A capacidade da mochila.
+ * @param num_runs O número total de execuções do benchmark.
+ * @param filename O nome do arquivo CSV para salvar os resultados.
+ * @param max_weight O peso máximo para os itens gerados.
+ * @param max_value O valor máximo para os itens gerados.
+ */
 void Benchmark::run(int num_items, int capacity, int num_runs, const std::string& filename, int max_weight, int max_value) {
     std::ofstream results_file(filename);
     if (!results_file.is_open()) {
